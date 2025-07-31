@@ -9,6 +9,7 @@ def AgregarPeliculas():
                 break
             else:
                 ListaPeliculas[Nombre] = {"Categoria": "Mejor Pelicula", "Votos": 0}
+        print()
     def MejorDireccion():
         print("Mejor direccion")
         while True:
@@ -17,6 +18,7 @@ def AgregarPeliculas():
                 break
             else:
                 ListaPeliculas[Nombre] = {"Categoria": "Mejor Pelicula", "Votos": 0}
+        print()
     def MejorFotografía():
         print("Mejor fotografía")
         while True:
@@ -25,6 +27,7 @@ def AgregarPeliculas():
                 break
             else:
                 ListaPeliculas[Nombre] = {"Categoria": "Mejor Pelicula", "Votos": 0}
+        print()
     def MejorActuacion():
         print("Mejor actuacion")
         while True:
@@ -33,6 +36,7 @@ def AgregarPeliculas():
                 break
             else:
                 ListaPeliculas[Nombre] = {"Categoria": "Mejor Pelicula", "Votos": 0}
+        print()
     def MejoresEfectosEspeciales():
         print("Mejores efectos especiales")
         while True:
@@ -41,12 +45,21 @@ def AgregarPeliculas():
                 break
             else:
                 ListaPeliculas[Nombre] = {"Categoria": "Mejor Pelicula", "Votos": 0}
+        print()
     
     MejorPelicula()
     MejorFotografía()
     MejorDireccion()
     MejorActuacion()
     MejoresEfectosEspeciales()
+
+def votar():
+    def votarMejorPelicula():
+        ListaMP = []
+        for Peli, Info in ListaPeliculas.items():
+            if Info["Categoria"] == "Mejor Pelicula":
+                ListaMP.append(ListaPeliculas)
+                print(f"{ListaMP}")
 
 while True:
     print("Ingrese la opcion que desea")
@@ -62,6 +75,10 @@ while True:
             print("No hay peliculas agregadas")
         else:
             print()
+            for Peli, Info in ListaPeliculas.items():
+                print(f"Pelicula: {Peli}, Categoria: {Info["Categoria"]}, Votos: {Info["Votos"]}")
+
+
     elif opcion == "3":
         if not ListaPeliculas:
             print("No hay peliculas")
