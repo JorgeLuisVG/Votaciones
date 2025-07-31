@@ -1,7 +1,6 @@
-ListaPeliculas = []
+ListaPeliculas = {}
 
 def AgregarPeliculas():
-    Pelicula ={}
     def MejorPelicula():
         print("Mejor Pelicula")
         while True:
@@ -9,8 +8,7 @@ def AgregarPeliculas():
             if Nombre == "Fin":
                 break
             else:
-                Pelicula[Nombre] = {"Categoria": "Mejor Pelicula"}
-                ListaPeliculas.append(Pelicula)
+                ListaPeliculas[Nombre] = {"Categoria": "Mejor Pelicula", "Votos": 0}
     def MejorDireccion():
         print("Mejor direccion")
         while True:
@@ -18,8 +16,7 @@ def AgregarPeliculas():
             if Nombre == "Fin":
                 break
             else:
-                Pelicula[Nombre] = {"Categoria": "Mejor direccion"}
-                ListaPeliculas.append(Pelicula)
+                ListaPeliculas[Nombre] = {"Categoria": "Mejor Pelicula", "Votos": 0}
     def MejorFotografía():
         print("Mejor fotografía")
         while True:
@@ -27,8 +24,7 @@ def AgregarPeliculas():
             if Nombre == "Fin":
                 break
             else:
-                Pelicula[Nombre] = {"Categoria": "Mejor Fotografía"}
-                ListaPeliculas.append(Pelicula)
+                ListaPeliculas[Nombre] = {"Categoria": "Mejor Pelicula", "Votos": 0}
     def MejorActuacion():
         print("Mejor actuacion")
         while True:
@@ -36,16 +32,15 @@ def AgregarPeliculas():
             if Nombre == "Fin":
                 break
             else:
-                Pelicula[Nombre] = {"Categoria": "Mejor Actuacion"}
-                ListaPeliculas.append(Pelicula)
+                ListaPeliculas[Nombre] = {"Categoria": "Mejor Pelicula", "Votos": 0}
     def MejoresEfectosEspeciales():
+        print("Mejores efectos especiales")
         while True:
             Nombre = input("Ingrese el nombre de la pelicula (para tereminar escriba fin)").title()
             if Nombre == "Fin":
                 break
             else:
-                Pelicula[Nombre] = {"Categoria": "Mejores Efectos Especiales"}
-                ListaPeliculas.append(Pelicula)
+                ListaPeliculas[Nombre] = {"Categoria": "Mejor Pelicula", "Votos": 0}
     
     MejorPelicula()
     MejorFotografía()
@@ -53,7 +48,15 @@ def AgregarPeliculas():
     MejorActuacion()
     MejoresEfectosEspeciales()
 
-        
+while True:
+    print("Ingrese la opcion que desea")
+    print("1 = Añadir peliculas")
+    print("2 = votar")
+    print("3 = Ver votos")
+    opcion = input()
+
+
+
             
             
             
