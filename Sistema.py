@@ -55,9 +55,15 @@ while True:
     print("3 = Ver votos")
     opcion = input()
 
-
-
-            
-            
-            
-            
+    if opcion == "1":
+        AgregarPeliculas()
+    elif opcion == "2":
+        if not ListaPeliculas:
+            print("No hay peliculas agregadas")
+        else:
+            print()
+    elif opcion == "3":
+        if not ListaPeliculas:
+            print("No hay peliculas")
+        else: 
+            print()
