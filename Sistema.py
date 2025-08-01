@@ -9,6 +9,7 @@ def AgregarPeliculas():
                 break
             else:
                 ListaPeliculas[Nombre] = {"Categoria": "Mejor Pelicula", "Votos": 0}
+        print()
     def MejorDireccion():
         print("Mejor direccion")
         while True:
@@ -17,6 +18,7 @@ def AgregarPeliculas():
                 break
             else:
                 ListaPeliculas[Nombre] = {"Categoria": "Mejor Pelicula", "Votos": 0}
+        print()
     def MejorFotografía():
         print("Mejor fotografía")
         while True:
@@ -25,6 +27,7 @@ def AgregarPeliculas():
                 break
             else:
                 ListaPeliculas[Nombre] = {"Categoria": "Mejor Pelicula", "Votos": 0}
+        print()
     def MejorActuacion():
         print("Mejor actuacion")
         while True:
@@ -33,6 +36,7 @@ def AgregarPeliculas():
                 break
             else:
                 ListaPeliculas[Nombre] = {"Categoria": "Mejor Pelicula", "Votos": 0}
+        print()
     def MejoresEfectosEspeciales():
         print("Mejores efectos especiales")
         while True:
@@ -41,12 +45,27 @@ def AgregarPeliculas():
                 break
             else:
                 ListaPeliculas[Nombre] = {"Categoria": "Mejor Pelicula", "Votos": 0}
-    
+        print()
+
     MejorPelicula()
     MejorFotografía()
     MejorDireccion()
     MejorActuacion()
     MejoresEfectosEspeciales()
+
+def votar():
+    def votarMejorPelicula():
+        for Peli, Info in ListaPeliculas.items():
+            if Info["Categoria"] == "Mejor Pelicula":
+                print(f"Pelicula: {Info["Categoria"]}")
+        
+        votarA = input("Ingrese el nombre de la pelicula a la cual desea votar").title()
+
+        for Peli, Info in ListaPeliculas.items():
+            if votarA == Peli:
+                ListaPeliculas[votarA]["Votos"] += 1
+    
+    votarMejorPelicula()
 
 while True:
     print("Ingrese la opcion que desea")
@@ -61,7 +80,7 @@ while True:
         if not ListaPeliculas:
             print("No hay peliculas agregadas")
         else:
-            print()
+            votar()
     elif opcion == "3":
         if not ListaPeliculas:
             print("No hay peliculas")
