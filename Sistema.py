@@ -46,7 +46,7 @@ def AgregarPeliculas():
             else:
                 ListaPeliculas[Nombre] = {"Categoria": "Mejor Pelicula", "Votos": 0}
         print()
-    
+
     MejorPelicula()
     MejorFotografía()
     MejorDireccion()
@@ -55,11 +55,17 @@ def AgregarPeliculas():
 
 def votar():
     def votarMejorPelicula():
-        ListaMP = []
         for Peli, Info in ListaPeliculas.items():
             if Info["Categoria"] == "Mejor Pelicula":
-                ListaMP.append(ListaPeliculas)
-                print(f"{ListaMP}")
+                print(f"Pelicula: {Info["Categoria"]}")
+        
+        votarA = input("Ingrese el nombre de la pelicula a la cual desea votar").title()
+
+        for Peli, Info in ListaPeliculas.items():
+            if votarA == Peli:
+                ListaPeliculas[votarA]["Votos"] += 1
+    
+    votarMejorPelicula()
 
 while True:
     print("Ingrese la opcion que desea")
@@ -74,11 +80,7 @@ while True:
         if not ListaPeliculas:
             print("No hay peliculas agregadas")
         else:
-            print()
-            for Peli, Info in ListaPeliculas.items():
-                print(f"Pelicula: {Peli}, Categoria: {Info["Categoria"]}, Votos: {Info["Votos"]}")
-
-
+            votar()
     elif opcion == "3":
         if not ListaPeliculas:
             print("No hay peliculas")
